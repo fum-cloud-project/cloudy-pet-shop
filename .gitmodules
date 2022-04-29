@@ -1,0 +1,4 @@
+[submodule "documentation"]
+	path = documentation
+	url = https://github.com/fum-cloud-project/documentation.git
+	branch = main
