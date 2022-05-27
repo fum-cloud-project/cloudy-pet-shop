@@ -2,10 +2,7 @@
 	path = documentation
 	url = https://github.com/fum-cloud-project/documentation.git
 	branch = main
-[submodule "jpetstore-6"]
-	path = jpetstore-6
-	url = https://github.com/mybatis/jpetstore-6.git
-	branch = master
+
 [submodule "auth-api"]
 	path = auth-api
 	url = https://github.com/fum-cloud-project/auth-api.git
