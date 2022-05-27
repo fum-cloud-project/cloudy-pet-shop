@@ -3,8 +3,8 @@ services:
   auth_api_server:
     container_name: "auth_api_server"
     build:
-      context: .
-      dockerfile: "auth-api/Dockerfile.api"
+      context: ./auth-api
+      dockerfile: "Dockerfile.api"
       cache_from:
         - rust:latest
     deploy:
@@ -28,8 +28,8 @@ services:
   auth_grpc_server:
     container_name: "auth_grpc_server"
     build:
-      context: .
-      dockerfile: "auth-api/Dockerfile.grpc"
+      context: ./auth-api
+      dockerfile: "Dockerfile.grpc"
       cache_from:
         - rust:latest
     deploy:
@@ -73,7 +73,7 @@ services:
           memory: 256M
     build:
       context: ./products-api
-      dockerfile: "products-api/Dockerfile"
+      dockerfile: "Dockerfile"
     container_name: "product-api"
     depends_on:
       - mongodb
@@ -90,7 +90,7 @@ services:
           memory: 256M
     build:
       context: ./order-api
-      dockerfile: "order-api/Dockerfile"
+      dockerfile: "Dockerfile"
     container_name: "order-api"
     depends_on:
       - mongodb
