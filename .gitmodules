@@ -7,3 +7,11 @@
 	path = auth-api
 	url = https://github.com/fum-cloud-project/auth-api.git
 	branch = master
+[submodule "product-api"]
+	path = products-api
+	url = https://github.com/fum-cloud-project/products-api
+	branch = main
+[submodule "order-api"]
+	path = order-api
+	url = https://github.com/fum-cloud-project/order-api
+	branch = main
