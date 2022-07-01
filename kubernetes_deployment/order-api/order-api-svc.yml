@@ -5,6 +5,7 @@ metadata:
   name: order-api-svc
   labels:
     app: order-api
+    namespace: order-ns
 spec:
   ports:
   - port: 80

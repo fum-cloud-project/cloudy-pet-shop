@@ -5,6 +5,7 @@ metadata:
   name: order-api-dp
   labels:
     app: order-api
+    namespace: order-ns
 spec:
   replicas: 1
   selector:
