@@ -1,0 +1,23 @@
+--deployment of auth-api worker, this worker is supposed to be able to access its mongodb database 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-api-dp
+  labels:
+    app: auth-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth-api
+  template:
+    metadata:
+      labels:
+        app: auth-api
+    spec:
+      containers:
+      - name: auth-api
+        image: auth-api:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP

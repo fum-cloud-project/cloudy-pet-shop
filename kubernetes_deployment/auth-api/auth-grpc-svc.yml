@@ -1,0 +1,15 @@
+--service for api-grpc-dp
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-grpc-svc
+  labels:
+    app: auth-grpc
+spec:
+  ports:
+  - port: 50051
+    targetPort: 50051
+    protocol: TCP
+  type: ClusterIP
+  selector:
+    app: auth-grpc
