@@ -1,0 +1,25 @@
+--deployment for product api
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-api-dp
+  labels:
+    app: product-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-api
+  template:
+    metadata:
+      labels:
+        app: product-api
+    spec:
+      containers:
+      - name: product-api
+        image: product-api:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        - containerPort: 50052
+          protocol: TCP

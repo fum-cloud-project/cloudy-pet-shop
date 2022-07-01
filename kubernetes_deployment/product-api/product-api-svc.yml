@@ -1,0 +1,18 @@
+--service for the order-api-dp
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-api-svc
+  labels:
+    app: order-api
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  - port: 50052
+    targetPort: 50052
+    protocol: TCP
+  type: ClusterIP
+  selector:
+    app: order-api
