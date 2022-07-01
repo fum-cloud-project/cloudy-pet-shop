@@ -5,6 +5,7 @@ metadata:
   name: auth-grpc-svc
   labels:
     app: auth-grpc
+    namespace: auth-ns
 spec:
   ports:
   - port: 50051

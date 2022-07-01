@@ -5,6 +5,7 @@ metadata:
   name: auth-api-svc
   labels:
     app: auth-api
+    namespace: auth-ns
 spec:
   ports:
   - port: 8080

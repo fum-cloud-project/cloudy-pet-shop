@@ -1,0 +1,7 @@
+--namespace for all the deployments and services for authentication
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: auth-ns
+  labels:
+    name: auth-nss

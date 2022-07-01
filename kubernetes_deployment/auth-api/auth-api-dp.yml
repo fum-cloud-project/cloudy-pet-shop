@@ -5,6 +5,7 @@ metadata:
   name: auth-api-dp
   labels:
     app: auth-api
+    namespace: auth-ns
 spec:
   replicas: 2
   selector:
