@@ -1,0 +1,15 @@
+-- service for mongodb per application only accessible within the same cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-api-mongodb-svc
+  labels:
+    app: product-api
+    namespace: appns
+spec:
+  type: ClusterIP
+  ports:
+  - port: 27017
+    targetPort: 27017
+  selector:
+    app: product-api
