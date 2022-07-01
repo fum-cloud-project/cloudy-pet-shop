@@ -54,3 +54,23 @@ sed -i "s/appname/$auth_appname/g" $auth"auth-redis-pvc.yml"
 sed -i "s/appname/$auth_appname/g" $auth"auth-redis-ss.yml"
 sed -i "s/appname/$auth_appname/g" $auth"auth-redis-svc.yml"
 
+sed -i "s/appns/$auth_namespace/g" $auth"auth-mongodb-pv.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-mongodb-pvc.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-mongodb-ss.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-mongodb-svc.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-redis-pv.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-redis-pvc.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-redis-ss.yml"
+sed -i "s/appns/$auth_namespace/g" $auth"auth-redis-svc.yml"
+
+sed -i "s/appns/$order_namespace/g" $order"order-mongodb-pv.yml"
+sed -i "s/appns/$order_namespace/g" $order"order-mongodb-pvc.yml"
+sed -i "s/appns/$order_namespace/g" $order"order-mongodb-ss.yml"
+sed -i "s/appns/$order_namespace/g" $order"order-mongodb-svc.yml"
+
+sed -i "s/appns/$product_namespace/g" $product"product-mongodb-pv.yml"
+sed -i "s/appns/$product_namespace/g" $product"product-mongodb-pvc.yml"
+sed -i "s/appns/$product_namespace/g" $product"product-mongodb-ss.yml"
+sed -i "s/appns/$product_namespace/g" $product"product-mongodb-svc.yml"
+
+
