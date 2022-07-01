@@ -1,0 +1,15 @@
+-- persistent volume claim template
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: auth-api-mongodb-pv-claim
+  labels:
+    app: auth-api
+    namespace: appns
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: gp2

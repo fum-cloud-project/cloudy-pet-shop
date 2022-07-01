@@ -1,0 +1,38 @@
+-- statefulset for mongodb
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: auth-api-mongodb-ss
+  labels:
+    app: auth-api
+    namespace: appns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: auth-api
+  serviceName: auth-api-mongodb-svc
+  template:
+    metadata:
+      labels:
+        app: auth-api
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo:latests
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: mongodb
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: mongodb
+        - name: MONGO_INITDB_DATABASE
+          value: mongodb
+        volumeMounts:
+        - name: mongodb-pv-claim
+          mountPath: /data/db
+      volumes:
+      - name: mongodb-pv-claim
+        persistentVolumeClaim:
+          claimName: auth-api-mongodb-pv-claim

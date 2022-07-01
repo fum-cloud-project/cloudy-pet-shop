@@ -1,0 +1,35 @@
+--statefulset for redis
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: auth-api-redis-ss
+  labels:
+    app: auth-api
+    namespace: appns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-api
+      namespace: appns
+  template:
+    metadata:
+      labels:
+        app: auth-api
+        namespace: appns
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
+        env:
+        - name: REDIS_PASSWORD
+          value: "redis"
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
+      volumes:
+      - name: redis-data
+        persistentVolumeClaim:
+          claimName: auth-api-redis-pv-claim
