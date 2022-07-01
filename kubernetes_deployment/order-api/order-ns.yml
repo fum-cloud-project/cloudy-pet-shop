@@ -1,7 +1,0 @@
---namespace for all the deployments and services for ordering
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: order-ns
-  labels:
-    name: order-nss
