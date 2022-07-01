@@ -5,6 +5,7 @@ metadata:
   name: appname-mongodb-pv-claim
   labels:
     app: appname
+    namespace: appns
 spec:
   accessModes:
     - ReadWriteOnce

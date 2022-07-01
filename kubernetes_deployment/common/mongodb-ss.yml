@@ -5,6 +5,7 @@ metadata:
   name: appname-mongodb-ss
   labels:
     app: appname
+    namespace: appns
 spec:
   replicas: 3
   selector:

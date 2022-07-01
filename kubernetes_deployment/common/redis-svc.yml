@@ -5,6 +5,7 @@ metadata:
   name: appname-redis-svc
   labels:
     app: appname
+    namespace: appns
 spec:
   type: ClusterIP
   ports:

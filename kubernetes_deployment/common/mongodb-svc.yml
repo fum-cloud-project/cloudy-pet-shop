@@ -5,6 +5,7 @@ metadata:
   name: appname-mongodb-svc
   labels:
     app: appname
+    namespace: appns
 spec:
   type: ClusterIP
   ports:

@@ -1,14 +1,17 @@
 --persistent volume clame template 
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: appname-redis-pv-claim
+  name: appname-redis-pv
   labels:
-    app: appname 
+    app: appname
+    namespace: appns
 spec:
   accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
-  storageClassName: gp2 
+  capacity:
+    storage: 2Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: gp2
+  volumeMode: Filesystem
+ 
