@@ -1,0 +1,2 @@
+./kubernetes_deployment/auth-api/mongo_pass
+./kubernetes_deployment/auth-api/mongo_user
