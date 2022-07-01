@@ -1,18 +1,19 @@
---service for the order-api-dp
+--service for the product-api-dp
 apiVersion: v1
 kind: Service
 metadata:
-  name: order-api-svc
+  name: product-api-svc
   labels:
-    app: order-api
+    app: product-api
+    namespace: product-ns
 spec:
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
   - port: 50052
     targetPort: 50052
     protocol: TCP
+  - port: 80
+    targetPort: 80
+    protocol: TCP
   type: ClusterIP
   selector:
-    app: order-api
+    app: product-api

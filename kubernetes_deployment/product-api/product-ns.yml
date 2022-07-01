@@ -1,0 +1,7 @@
+--namespace for all the deployments and services for products
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-ns
+  labels:
+    name: product-ns

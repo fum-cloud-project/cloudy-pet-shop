@@ -5,6 +5,7 @@ metadata:
   name: product-api-dp
   labels:
     app: product-api
+    namespace: product-ns
 spec:
   replicas: 1
   selector:
