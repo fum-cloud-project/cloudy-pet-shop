@@ -5,7 +5,7 @@ metadata:
   name: product-api-mongodb-pv-claim
   labels:
     app: product-api
-    namespace: appns
+    namespace: product-ns
 spec:
   accessModes:
     - ReadWriteOnce

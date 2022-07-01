@@ -5,7 +5,7 @@ metadata:
   name: product-api-mongodb-ss
   labels:
     app: product-api
-    namespace: appns
+    namespace: product-ns
 spec:
   replicas: 3
   selector:

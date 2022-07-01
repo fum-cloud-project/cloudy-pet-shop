@@ -5,7 +5,7 @@ metadata:
   name: order-api-mongodb-ss
   labels:
     app: order-api
-    namespace: appns
+    namespace: order-ns
 spec:
   replicas: 3
   selector:

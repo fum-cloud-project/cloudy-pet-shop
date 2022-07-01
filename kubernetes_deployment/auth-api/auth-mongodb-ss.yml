@@ -5,7 +5,7 @@ metadata:
   name: auth-api-mongodb-ss
   labels:
     app: auth-api
-    namespace: appns
+    namespace: auth-ns
 spec:
   replicas: 3
   selector:

@@ -5,7 +5,7 @@ metadata:
   name: auth-api-redis-svc
   labels:
     app: auth-api
-    namespace: appns
+    namespace: auth-ns
 spec:
   type: ClusterIP
   ports:

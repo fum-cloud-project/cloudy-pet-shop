@@ -5,7 +5,7 @@ metadata:
   name: product-api-redis-pv
   labels:
     app: product-api
-    namespace: appns
+    namespace: product-ns
 spec:
   accessModes:
     - ReadWriteOnce

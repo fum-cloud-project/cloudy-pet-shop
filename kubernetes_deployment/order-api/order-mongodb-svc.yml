@@ -5,7 +5,7 @@ metadata:
   name: order-api-mongodb-svc
   labels:
     app: order-api
-    namespace: appns
+    namespace: order-ns
 spec:
   type: ClusterIP
   ports:

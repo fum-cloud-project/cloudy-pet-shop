@@ -5,18 +5,18 @@ metadata:
   name: auth-api-redis-ss
   labels:
     app: auth-api
-    namespace: appns
+    namespace: auth-ns
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: auth-api
-      namespace: appns
+      namespace: auth-ns
   template:
     metadata:
       labels:
         app: auth-api
-        namespace: appns
+        namespace: auth-ns
     spec:
       containers:
       - name: redis

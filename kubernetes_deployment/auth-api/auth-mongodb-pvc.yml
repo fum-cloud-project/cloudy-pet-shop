@@ -5,7 +5,7 @@ metadata:
   name: auth-api-mongodb-pv-claim
   labels:
     app: auth-api
-    namespace: appns
+    namespace: auth-ns
 spec:
   accessModes:
     - ReadWriteOnce

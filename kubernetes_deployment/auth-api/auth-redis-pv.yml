@@ -5,7 +5,7 @@ metadata:
   name: auth-api-redis-pv
   labels:
     app: auth-api
-    namespace: appns
+    namespace: auth-ns
 spec:
   accessModes:
     - ReadWriteOnce

@@ -5,7 +5,7 @@ metadata:
   name: product-api-mongodb-svc
   labels:
     app: product-api
-    namespace: appns
+    namespace: product-ns
 spec:
   type: ClusterIP
   ports:
