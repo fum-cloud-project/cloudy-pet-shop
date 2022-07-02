@@ -1,4 +1,4 @@
---same as auth-api-dp.yml but for grpc
+# same as auth-api-dp.yml but for grpc
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,7 +7,7 @@ metadata:
     app: auth-grpc
     namespace: auth-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: auth-grpc
@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: auth-grpc
-        image: auth-grpc:latest
+        image: img-reg:5000/auth-grpc-kuber:dev1
         ports:
         - containerPort: 50051
           protocol: TCP    
+        terminationMessagePath: /opt/auth-api/logs/grpc.log

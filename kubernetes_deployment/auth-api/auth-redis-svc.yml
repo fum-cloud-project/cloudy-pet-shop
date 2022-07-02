@@ -4,11 +4,11 @@ kind: Service
 metadata:
   name: auth-api-redis-svc
   labels:
-    namespace: auth-ns
+    app: auth-api-redis-ss
 spec:
   type: ClusterIP
   ports:
   - port: 6379
     targetPort: 6379
   selector:
-    app: auth-api
+    app: auth-api-redis-ss

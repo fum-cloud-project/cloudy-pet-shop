@@ -4,16 +4,19 @@ kind: StatefulSet
 metadata:
   name: auth-api-redis-ss
   labels:
+    app: auth-api-redis-ss
     namespace: auth-ns
 spec:
   replicas: 1
   selector:
     matchLabels:
+      app: auth-api-redis-ss
       namespace: auth-ns
   serviceName: auth-api-redis-svc
   template:
     metadata:
       labels:
+        app: auth-api-redis-ss
         namespace: auth-ns
     spec:
       containers:

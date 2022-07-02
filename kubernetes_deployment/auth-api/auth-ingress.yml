@@ -1,0 +1,30 @@
+# Using nginx-ingress to forward requests to appropriate pods.
+# /api/auth to auth-api-svc
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: auth-api-ingress
+  labels:
+    app: auth-api-ingress
+    namespace: auth-ns
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/auth
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-api-svc
+            port:
+              number: 8080
+      - path: /api/users
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-api-svc
+            port:
+              number: 8080

@@ -4,11 +4,11 @@ kind: Service
 metadata:
   name: auth-api-mongodb-svc
   labels:
-    namespace: auth-ns
+    app: auth-api-mongodb-ss
 spec:
   type: ClusterIP
   ports:
   - port: 27017
     targetPort: 27017
   selector:
-    app: auth-api
+    app: auth-api-mongodb-ss

@@ -1,4 +1,4 @@
---deployment of auth-api worker, this worker is supposed to be able to access its mongodb database 
+# deployment of auth-api worker, this worker is supposed to be able to access its mongodb database 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,7 +7,7 @@ metadata:
     app: auth-api
     namespace: auth-ns
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: auth-api
@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: auth-api
-        image: auth-api:latest
+        image: img-reg:5000/auth-api-kuber:dev1
         ports:
         - containerPort: 8080
           protocol: TCP
+        terminationMessagePath: /opt/auth-api/logs/api.log
