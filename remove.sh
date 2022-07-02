@@ -17,6 +17,15 @@ order_ns="order-ns"
 product_ns="product-ns"
 
 # Auth microservice
+# Deleting ingress
+kubectl delete -f $main_yml_dir$auth_yml_dir"auth-ingress.yml" --namespace=$auth_ns
+
+# Deleting auth services api and grpc
+kubectl delete -f $main_yml_dir$auth_yml_dir"auth-api-dp.yml" --namespace=$auth_ns
+kubectl delete -f $main_yml_dir$auth_yml_dir"auth-api-svc.yml" --namespace=$auth_ns
+kubectl delete -f $main_yml_dir$auth_yml_dir"auth-grpc-dp.yml" --namespace=$auth_ns
+kubectl delete -f $main_yml_dir$auth_yml_dir"auth-grpc-svc.yml" --namespace=$auth_ns
+
 # Deleting mongodb
 kubectl delete secret mongo-admin --namespace=auth-ns
 kubectl delete -f $main_yml_dir$auth_yml_dir"auth-mongodb-ss.yml" --namespace=$auth_ns

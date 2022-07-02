@@ -35,3 +35,12 @@ kubectl apply -f $main_yml_dir$auth_yml_dir"auth-redis-pv.yml" --namespace=$auth
 kubectl apply -f $main_yml_dir$auth_yml_dir"auth-redis-pvc.yml" --namespace=$auth_ns
 kubectl apply -f $main_yml_dir$auth_yml_dir"auth-redis-svc.yml" --namespace=$auth_ns
 kubectl apply -f $main_yml_dir$auth_yml_dir"auth-redis-ss.yml" --namespace=$auth_ns
+
+# Deploying auth services api and grpc
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-grpc-svc.yml" --namespace=$auth_ns
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-api-svc.yml" --namespace=$auth_ns
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-api-dp.yml" --namespace=$auth_ns
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-grpc-dp.yml" --namespace=$auth_ns
+
+# Creating ingress
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-ingress.yml" --namespace=$auth_ns
