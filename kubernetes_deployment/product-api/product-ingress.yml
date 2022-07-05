@@ -20,4 +20,4 @@ spec:
           service:
             name: product-api-svc
             port:
-              number: 80
+              number: 8081

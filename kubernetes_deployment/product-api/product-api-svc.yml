@@ -12,9 +12,9 @@ spec:
     name: grpc-port
     targetPort: 50052
     protocol: TCP
-  - port: 80
+  - port: 8081
     name: http-port
-    targetPort: 80
+    targetPort: 8081
     protocol: TCP
   type: ClusterIP
   selector:
