@@ -34,7 +34,7 @@ kubectl delete -f $main_yml_dir$order_yml_dir"order-mongodb-pvc.yml" --namespace
 kubectl delete -f $main_yml_dir$order_yml_dir"order-mongodb-pv.yml"
 
 # Deleting namespace
-kubectl delete -f $main_yml_dir$order_yml_dir"order-ns.yml"
+kubectl delete -f $main_yml_dir$order_yml_dir"order-ns.json"
 
 
 # Product microservice
@@ -49,7 +49,7 @@ kubectl delete -f $main_yml_dir$product_yml_dir"product-mongodb-pvc.yml" --names
 kubectl delete -f $main_yml_dir$product_yml_dir"product-mongodb-pv.yml"
 
 # Deleting namespace
-kubectl delete -f $main_yml_dir$product_yml_dir"product-ns.yml"
+kubectl delete -f $main_yml_dir$product_yml_dir"product-ns.json"
 
 
 # Auth microservice
