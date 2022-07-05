@@ -12,3 +12,7 @@ spec:
     requests:
       storage: 2Gi
   storageClassName: gp2
+  selector:
+    matchLabels:
+      pvn: auth-api-mongodb-pv
+      namespace: auth-ns

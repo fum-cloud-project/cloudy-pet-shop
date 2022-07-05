@@ -5,6 +5,7 @@ metadata:
   name: auth-api-mongodb-pv
   labels:
     namespace: auth-ns
+    pvn: auth-api-mongodb-pv
 spec:
   accessModes:
     - ReadWriteOnce
@@ -22,6 +23,3 @@ spec:
           operator: In
           values:
             - node1
-            - node2
-            - node3
-            - node4
