@@ -20,4 +20,4 @@ spec:
           service:
             name: order-api-svc
             port:
-              number: 80
+              number: 8081

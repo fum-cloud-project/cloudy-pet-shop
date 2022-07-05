@@ -8,8 +8,8 @@ metadata:
     namespace: order-ns
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 8081
+    targetPort: 8081
     protocol: TCP
   type: ClusterIP
   selector:
