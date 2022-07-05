@@ -8,6 +8,9 @@ metadata:
     namespace: product-ns
 spec:
   ports:
+  - port: 50052
+    targetPort: 50052
+    protocol: TCP
   - port: 80
     targetPort: 80
     protocol: TCP
