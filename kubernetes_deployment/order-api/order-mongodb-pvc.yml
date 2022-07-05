@@ -1,10 +1,9 @@
--- persistent volume claim template
+# persistent volume claim template
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: order-api-mongodb-pv-claim
   labels:
-    app: order-api
     namespace: order-ns
 spec:
   accessModes:

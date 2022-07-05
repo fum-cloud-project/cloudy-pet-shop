@@ -1,4 +1,4 @@
---order-api deployment
+# deployment of order-api worker, this worker is supposed to be able to access its mongodb database 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: order-api
-        image: order-api:latest
+        image: img-reg:5000/order-kuber:dev
         ports:
         - containerPort: 80
           protocol: TCP

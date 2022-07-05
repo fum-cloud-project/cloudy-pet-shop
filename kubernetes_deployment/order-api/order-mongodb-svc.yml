@@ -1,15 +1,14 @@
--- service for mongodb per application only accessible within the same cluster
+# service for mongodb per application only accessible within the same cluster
 apiVersion: v1
 kind: Service
 metadata:
   name: order-api-mongodb-svc
   labels:
-    app: order-api
-    namespace: order-ns
+    app: order-api-mongodb-ss
 spec:
   type: ClusterIP
   ports:
   - port: 27017
     targetPort: 27017
   selector:
-    app: order-api
+    app: order-api-mongodb-ss

@@ -1,4 +1,4 @@
---order-api service
+# service for the order-api-dp
 apiVersion: v1
 kind: Service
 metadata:

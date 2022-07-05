@@ -1,38 +1,33 @@
--- statefulset for mongodb
+# statefulset for mongodb
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: order-api-mongodb-ss
   labels:
-    app: order-api
+    app: order-api-mongodb-ss
     namespace: order-ns
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: order-api
+      app: order-api-mongodb-ss
+      namespace: order-ns
   serviceName: order-api-mongodb-svc
   template:
     metadata:
       labels:
-        app: order-api
+        app: order-api-mongodb-ss
+        namespace: order-ns
     spec:
       containers:
       - name: mongodb
-        image: mongo:latests
+        image: img-reg:5000/mongo:dev
         ports:
         - containerPort: 27017
-        env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: mongodb
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          value: mongodb
-        - name: MONGO_INITDB_DATABASE
-          value: mongodb
         volumeMounts:
-        - name: mongodb-pv-claim
+        - name: order-api-mongodb-pv-claim
           mountPath: /data/db
       volumes:
-      - name: mongodb-pv-claim
+      - name: order-api-mongodb-pv-claim
         persistentVolumeClaim:
           claimName: order-api-mongodb-pv-claim
