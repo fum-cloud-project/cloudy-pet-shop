@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: order-api
-        image: img-reg:5000/order-kuber:dev
+        image: img-reg:5000/order-api-kuber:dev1
         ports:
         - containerPort: 80
           protocol: TCP

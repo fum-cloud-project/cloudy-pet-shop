@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: product-api
-        image: img-reg:5000/product-kuber:dev
+        image: img-reg:5000/product-api-kuber:dev
         ports:
         - containerPort: 80
           protocol: TCP
