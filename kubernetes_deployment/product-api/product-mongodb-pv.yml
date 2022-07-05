@@ -1,10 +1,9 @@
---persistent volume clame template 
+# persistent volume clame template 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: product-api-redis-pv
+  name: product-api-mongodb-pv
   labels:
-    app: product-api
     namespace: product-ns
 spec:
   accessModes:
@@ -13,4 +12,16 @@ spec:
     storage: 2Gi
   persistentVolumeReclaimPolicy: Retain
   storageClassName: gp2
-  volumeMode: Filesystem
+  local:
+    path: /kube_pv
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+            - node1
+            - node2
+            - node3
+            - node4

@@ -1,10 +1,9 @@
--- persistent volume claim template
+# persistent volume claim template
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: product-api-mongodb-pv-claim
   labels:
-    app: product-api
     namespace: product-ns
 spec:
   accessModes:
