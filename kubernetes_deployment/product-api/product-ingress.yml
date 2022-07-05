@@ -1,0 +1,23 @@
+# Using nginx-ingress to forward requests to appropriate pods.
+# /api/product to product-api-svc
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: product-api-ingress
+  labels:
+    app: product-api-ingress
+    namespace: product-ns
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/catalog
+        pathType: Prefix
+        backend:
+          service:
+            name: product-api-svc
+            port:
+              number: 80

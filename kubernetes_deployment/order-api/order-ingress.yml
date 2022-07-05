@@ -1,0 +1,23 @@
+# Using nginx-ingress to forward requests to appropriate pods.
+# /api/order to order-api-svc
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: order-api-ingress
+  labels:
+    app: order-api-ingress
+    namespace: order-ns
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/order
+        pathType: Prefix
+        backend:
+          service:
+            name: order-api-svc
+            port:
+              number: 80

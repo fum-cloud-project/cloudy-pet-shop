@@ -44,8 +44,6 @@ kubectl apply -f $main_yml_dir$auth_yml_dir"auth-api-svc.yml" --namespace=$auth_
 kubectl apply -f $main_yml_dir$auth_yml_dir"auth-api-dp.yml" --namespace=$auth_ns
 kubectl apply -f $main_yml_dir$auth_yml_dir"auth-grpc-dp.yml" --namespace=$auth_ns
 
-# Creating ingress
-kubectl apply -f $main_yml_dir$auth_yml_dir"auth-ingress.yml" --namespace=$auth_ns
 
 # Product microservice
 # Creating namespace
@@ -74,3 +72,8 @@ kubectl apply -f $main_yml_dir$order_yml_dir"order-mongodb-ss.yml" --namespace=$
 # Deploying order service api
 kubectl apply -f $main_yml_dir$order_yml_dir"order-api-svc.yml" --namespace=$order_ns
 kubectl apply -f $main_yml_dir$order_yml_dir"order-api-dp.yml" --namespace=$order_ns
+
+# Creating ingresses
+kubectl apply -f $main_yml_dir$auth_yml_dir"auth-ingress.yml" --namespace=$auth_ns
+kubectl apply -f $main_yml_dir$product_yml_dir"product-ingress.yml" --namespace=$product_ns
+kubectl apply -f $main_yml_dir$order_yml_dir"order-ingress.yml" --namespace=$order_ns
