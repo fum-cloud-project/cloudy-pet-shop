@@ -1,9 +1,0 @@
-# simple storage class
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: gp2
-  labels:
-    namespace: auth-ns
-provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumer
